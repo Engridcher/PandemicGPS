@@ -1,0 +1,10 @@
+<div [style.width.px]="500">
+    <label for="zipCode">Enter Zip Code</label>
+    <input id="zipCode" type="text" [(ngModel)]="zipCode" />
+    <button [disabled]="clicked" (click)="searchZipCode()">Post Zip Code</button>
+</div>
+
+<p>{{zipCode}}</p>
+
+
+<app-covid-sites [sitesToDisplay]="returnedZips"></app-covid-sites>

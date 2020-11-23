@@ -1,0 +1,11 @@
+<div id="get-suggest-site">
+  <h1>List of Suggested Sites</h1>
+  <div *ngFor="let site of sites">
+      <h3><span>Testing Site:</span> {{site.covidSite}}</h3>
+      <p><span>Address:</span> {{site.siteAddress}}</p>
+      <p><span>City:</span>  {{site.siteCity}},  <span>State:</span> {{site.siteState}}</p>
+      <p><span>Phone:</span> {{site.sitePhone}}</p>
+      <p><span>Website:</span> {{site.siteWebsite}}</p>
+        <button class="button-update" type="button" [routerLink]="['/updatesuggestsite', site._id]">Edit</button>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+<div [style.width.px]="500">
+  <label for="zipCode">Delete Zip Code</label>
+  <input id="zipCode" type="text" [(ngModel)]="zipCode" />
+  <button mat-button color="warn" (click)="onDelete(zipCode)">DELETE</button>
+</div>
+<p>{{zipCode}}</p>
