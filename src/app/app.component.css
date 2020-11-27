@@ -2,10 +2,11 @@
   width: 900px;
   margin: 10px auto 130px auto;
   padding-bottom: 130px;
+  color: black;
 }
 
 h2 {
-  
+
   text-shadow: 2px 2px #1ac45b;
   text-align: center;
   }
@@ -13,36 +14,35 @@ h2 {
   nav {
     text-align: center;
   }
-  
+
   ul {
     margin: 1em 0 2.5em 0;
   }
-  
+
   ul li {
     display: inline-block;
     margin-right: 25px;
   }
-  
+
   nav ul li a {
     padding: 5px 10px;
     text-decoration: none;
     background-color: #eee;
     border-radius: 4px;
   }
-  
+
   nav ul li a:visited,
   a:link {
     color: rgb(36, 72, 110)
   }
-  
+
   nav ul li a:hover {
     color: #039BE5;
     background-color: #CFD8DC;
   }
-  
+
   nav ul li a:active {
     color: #039BE5;
   }
-  
-  
-  
+
+

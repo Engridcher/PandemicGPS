@@ -10,7 +10,7 @@ const ZipCodeLatLog = require('./zipcodelatlog')
 
 const app = express();
 
-//local
+//local2
 // mongoose.connect('mongodb://localhost:27017/PandemicGPS', { useNewUrlParser: true })
 // Atlas
 mongoose.connect('mongodb+srv://engridcher:hampton1225@cluster0.nrfqb.mongodb.net/PandemicGPS?retryWrites=true&w=majority', { useNewUrlParser: true })
@@ -115,7 +115,7 @@ app.post('/api/suggestsite', (req, res) => {
     siteWebsite
   });
 
-  //send the document to the database 
+  //send the document to the database
   suggestsite.save()
     //in case of success
     .then(() => { console.log('Success'); })
