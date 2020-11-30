@@ -1,0 +1,11 @@
+<h1 style="margin-top: 1em;" >Covid Testing Sites</h1>
+<div *ngFor="let site of sitesToDisplay; let idx=index" class="covid">
+  <p style="margin-bottom: 0.35em;"> <span style="font-style:oblique; font-weight: bold;">Site {{idx+1}}:</span> {{site.additional_information_for_patients}} </p>
+    <ul style="margin-bottom: 1em;">
+      <li>City: {{ site.location_address_locality}}, {{ site.location_address_region}}</li>
+      <li>Address: {{ site.location_address_street}} </li>
+      <li>Phone: {{ site.location_contact_phone_main}} </li>
+      <li>Website: {{ site.location_contact_url_covid_info}} </li>
+      <li>Name of Site: {{ site.location_name}} </li>
+    </ul>
+</div>

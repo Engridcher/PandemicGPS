@@ -1,0 +1,17 @@
+<div class="appcomponent">
+  <h2>Welcome to {{ title }}!</h2>
+
+
+
+  <nav>
+    <ul>
+      <li><a routerLink="" routerLinkActive="active">Home</a></li>
+      <li><a routerLink="searchzipcode" routerLinkActive="active">Search Zip Code</a></li>
+       <!-- <li><a routerLink="getzipcode" routerLinkActive="active">Get Zip Code</a></li> -->
+      <li><a routerLink="deletezipcode" routerLinkActive="active">Delete Zip Code </a></li> 
+      <li><a routerLink="suggestsite" routerLinkActive="active">Suggest COVID Testing Sites </a></li>
+      <li><a routerLink="getsuggestsite" routerLinkActive="active">Get Suggested Sites</a></li>
+    </ul>
+  </nav>
+  <router-outlet></router-outlet>
+</div>

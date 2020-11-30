@@ -1,0 +1,41 @@
+#covidSite,
+#siteAddress,
+#siteCity,
+#siteState,
+#sitePhone,
+#siteWebsite,
+#submitbut {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  margin-right: 0;
+}
+
+#covidSite {
+  margin-left: 1em;
+}
+
+#siteAddress {
+  margin-left: 8em;
+}
+
+#siteCity {
+  margin-left: 9.9em;
+}
+
+#siteState {
+  margin-left: 9.5em;
+}
+
+#sitePhone {
+  margin-left: 5em;
+}
+
+#siteWebsite {
+  margin-left: 8em;
+}
+
+#submit-error p{
+  color: red;
+  font-size: 1.25em;
+  margin-top: 0.25em;
+}
