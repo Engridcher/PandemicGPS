@@ -7,6 +7,7 @@ const cors = require('cors')
 const ZipCode = require('./zipcode')
 const SuggestSite = require('./suggestsite')
 const ZipCodeLatLog = require('./zipcodelatlog')
+const Donation = require('./donationusers')
 
 const app = express();
 
@@ -115,7 +116,7 @@ app.post('/api/suggestsite', (req, res) => {
     siteWebsite
   });
 
-  //send the document to the database 
+  //send the document to the database
   suggestsite.save()
     //in case of success
     .then(() => { console.log('Success'); })
@@ -213,6 +214,179 @@ app.get('/api/coviddata/:zip', async (req, res) => {
     }
   })
 });
+
+/* NOTE  Karna's Routes */
+
+app.post('/api/donation', (req, res) => {
+  console.log(req.body);
+
+  const donation = new Donation({
+    fname: req.body.fname,
+    lname: req.body.lname,
+    email: req.body.email,
+    address: req.body.address,
+    city: req.body.city,
+    state: req.body.state,
+    zip: req.body.zip,
+    a3: req.body.a3,
+    cardname: req.body.cardname,
+    cardnumber: req.body.cardnumber,
+    expmonth: req.body.expmonth,
+    expyear: req.body.expyear,
+    cvv: req.body.cvv,
+  });
+  //send the document to the database
+  donation.save()
+    //in case of success
+    .then(() => {
+      console.log('Success');
+      res.json({ mydata: "From my Donation Page" })
+    })
+    //if error
+    .catch(err => {
+      console.log('Error:' + err);
+    });
+})
+
+app.delete('/api/donation/:id', (req, res) => {
+  console.log(req.params.id);
+  Donation.findOneAndDelete({ _id: req.params.id }).then(result => {
+    console.log(result);
+    res.status(200).json("Deleted!");
+  });
+})
+
+app.get('/api/donation/', (req, res) => {
+  const donation = Donation.find({}, (err, result) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.json(result);
+    }
+  });
+})
+
+app.put('/api/donation/:id', (req, res) => {
+
+  const updateInfo = {
+    fname: req.body.fname,
+    lname: req.body.lname,
+    email: req.body.email,
+    address: req.body.address,
+    city: req.body.city,
+    state: req.body.state,
+    zip: req.body.zip,
+    a3: req.body.a3,
+    cardname: req.body.cardname,
+    cardnumber: req.body.cardnumber,
+    expmonth: req.body.expmonth,
+    expyear: req.body.expyear,
+    cvv: req.body.cvv,
+  };
+
+  Donation.findOneAndUpdate({ _id: req.params.id }, updateInfo).then(result => {
+    console.log(result);
+    res.status(200).json("Updated!");
+  });
+
+})
+
+// need update Donation
+app.post("/api/donation/forupdate", (req, res, next) => {
+
+  const suggestsite = Donation.findById({ _id: req.body.id }, (err, result) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.json(result);
+    }
+  });
+});
+
+/*  ENE OF Karma's Route */
+
+/*  NOTE Start of Maryline's Routes */
+
+app.get('/users', (req, res, next) => {
+  User.find()
+    //if data is returned, send data as a response
+    .then(data => res.status(200).json(data))
+    //if error, send internal server error
+    .catch(err => {
+      console.log('Error: ${err}');
+      res.status(500).json(err);
+    });
+});
+
+// serve incoming post requests to /user
+app.post('/users', (req, res, next) => {
+  // create a new user variable and save request’s fields
+  const user = new User({
+
+    firstname: req.body.firstname,
+    lastname: req.body.lastname,
+    username: req.body.username,
+    email: req.body.email,
+    phonenumber: req.body.phonenumber,
+    address: req.body.address,
+    zipcode: req.body.zipcode,
+    password: req.body.password
+  });
+  //send the document to the database
+  user.save()
+    //in case of success
+    .then(() => { console.log('Success'); })
+    //if error
+    .catch(err => { console.log('Error:' + err); });
+
+});
+
+//:id is a dynamic parameter that will be extracted from the URL
+app.delete("/users/:id", (req, res, next) => {
+  User.deleteOne({ _id: req.params.id }).then(result => {
+    console.log(result);
+    res.status(200).json("Deleted!");
+  });
+
+});
+
+// serve incoming put requests to /users
+app.put('/users/:id', (req, res, next) => {
+  console.log("id: " + req.params.id)
+  // check that the parameter id is valid
+  if (mongoose.Types.ObjectId.isValid(req.params.id)) {
+    //find a document
+    User.findOneAndUpdate({ _id: req.params.id },
+      {
+        $set: {
+          firstname: req.body.firstname,
+          lastname: req.body.lastname,
+          username: req.body.username,
+          email: req.body.email,
+          phonenumber: req.body.phonenumber,
+          address: req.body.address,
+          zipcode: req.body.zipcode,
+          password: req.body.password
+        }
+      },
+      { new: true })
+      .then((user) => {
+        if (user) { //what was updated
+          console.log(user);
+        } else {
+          console.log("no data exist for this id");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  } else {
+    console.log("please provide correct id");
+  }
+
+});
+
+/*  END OF Maryline's Routes  */
 
 
 app.listen(8000, () => {

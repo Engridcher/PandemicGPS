@@ -1,0 +1,6 @@
+<div [style.width.px]="500">
+  <label for="donationDelete">Delete Donation</label>
+  <input id="donationDelete" type="text" [(ngModel)]="donationDelete" />
+  <button mat-button color="warn" (click)="deleteDonation(donationDelete)">DELETE</button>
+</div>
+<p>{{donationDelete}}</p>

@@ -1,17 +1,42 @@
+<mat-sidenav-container fullscreen>
+  <mat-sidenav mode="push" #sidenav class="mat-elevation-z4" mode="side" [(opened)]="opened">
+   <!--  <mat-sidenav-content>Main</mat-sidenav-content> -->
+    <mat-nav-list >
+      <a mat-list-item routerLink="/" routerLinkActive="active">Home</a>
+      <a mat-list-item routerLink="searchzipcode" routerLinkActive="active">Search Zip Code</a>
+      <a mat-list-item routerLink="deletezipcode" routerLinkActive="active">Delete Zip Code </a>
+      <a mat-list-item routerLink="suggestsite" routerLinkActive="active">Suggest COVID Testing Sites </a>
+      <a mat-list-item routerLink="getsuggestsite" routerLinkActive="active">Get Suggested Sites</a>
+      <a mat-list-item routerLink="donationpage" routerLinkActive="active">Donation</a>
+      <a mat-list-item routerLink="getdonationpage" routerLinkActive="active">Get Donations</a>
+      <a mat-list-item routerLink="deletedonationpage" routerLinkActive="active">Delete Donation</a>
+      <!-- <mat-list-item *ngFor="let item of list "> -->
+        <!-- <mat-icon matListIcon>Some Item</mat-icon> -->
+        <!-- <h3 matLine>Some Item</h3> -->
+      <!-- </mat-list-item> -->
+    </mat-nav-list>
+  </mat-sidenav>
+  <!-- <button (click)="opened=!opened">Open</button> -->
+  <button color="basic" mat-raised-button (click)="sidenav.toggle()">Menu Toggle</button>
+  <div class="container">
+  </div>
+
+
+
 <div class="appcomponent">
   <h2>Welcome to {{ title }}!</h2>
 
-
-
-  <nav>
-    <ul>
-      <li><a routerLink="" routerLinkActive="active">Home</a></li>
-      <li><a routerLink="searchzipcode" routerLinkActive="active">Search Zip Code</a></li>
+  <!-- <nav> -->
+    <!-- <ul> -->
+      <!-- <li><a routerLink="" routerLinkActive="active">Home</a></li> -->
+      <!-- <li><a routerLink="searchzipcode" routerLinkActive="active">Search Zip Code</a></li> -->
        <!-- <li><a routerLink="getzipcode" routerLinkActive="active">Get Zip Code</a></li> -->
-      <li><a routerLink="deletezipcode" routerLinkActive="active">Delete Zip Code </a></li> 
-      <li><a routerLink="suggestsite" routerLinkActive="active">Suggest COVID Testing Sites </a></li>
-      <li><a routerLink="getsuggestsite" routerLinkActive="active">Get Suggested Sites</a></li>
-    </ul>
-  </nav>
+      <!-- <li><a routerLink="deletezipcode" routerLinkActive="active">Delete Zip Code </a></li> -->
+      <!-- <li><a routerLink="suggestsite" routerLinkActive="active">Suggest COVID Testing Sites </a></li> -->
+      <!-- <li><a routerLink="getsuggestsite" routerLinkActive="active">Get Suggested Sites</a></li> -->
+    <!-- </ul> -->
+  <!-- </nav> -->
   <router-outlet></router-outlet>
 </div>
+
+</mat-sidenav-container>

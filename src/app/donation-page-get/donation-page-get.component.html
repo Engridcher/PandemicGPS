@@ -1,0 +1,26 @@
+<div [style.width.px]="500">
+  <label for="donation">Get Donations</label>
+
+  <button (click)="getDonationPage()">Get Donations</button>
+</div>
+
+
+<div *ngFor="let item of donationData; let i=index">Donation Data {{i+1}}:
+<div>
+  <h4>First Name: {{item.fname}}</h4>
+  <h4>Last Name: {{item.lname}}</h4>
+  <h4>Email: {{item.email}}</h4>
+  <h4>Address: {{item.address}}</h4>
+  <h4>City: {{item.city}}</h4>
+  <h4>State: {{item.state}}</h4>
+  <h4>Zip Code: {{item.zip}}</h4>
+  <h4>Payment: {{item.a3}}</h4>
+  <h4>Card name: {{item.cardname}}</h4>
+  <h4>Card Number: {{item.cardnumber}}</h4>
+  <h4>Expiration Month: {{item.expmonth}}</h4>
+  <h4>Expiration Year: {{item.expyear}}</h4>
+  <h4>CVV: {{item.cvv}}</h4>
+  <button class="button-update" type="button" [routerLink]="['/updatedonationpage', item._id]">Edit</button>
+</div>
+</div>
+

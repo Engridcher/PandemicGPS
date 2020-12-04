@@ -1,0 +1,48 @@
+<div>
+  <h2>{{mode}} Register</h2>
+  <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+    <mat-form-field >
+      <input matInput placeholder="First Name" id="firstname" 
+      [(ngModel)]=" firstname" name="firstname" >
+    </mat-form-field>
+  
+    <mat-form-field >
+      <input matInput placeholder="Last Name" id="lastname" 
+      [(ngModel)]=" lastname" name="lastname" >
+    </mat-form-field>
+    <br>
+    <mat-form-field >
+      <input matInput placeholder="User Name" id="username" 
+      [(ngModel)]=" username" name="username" >
+    </mat-form-field>
+    
+    <mat-form-field >
+      <input matInput placeholder="Email" id="email" 
+      [(ngModel)]=" email" name="email" >
+    </mat-form-field>
+    <br>
+    <mat-form-field >
+      <input matInput placeholder="Phone Number" id="phonenumber" 
+      [(ngModel)]=" phonenumber" name="phonenumber" >
+    </mat-form-field>
+    
+    <mat-form-field >
+      <input matInput placeholder="Address" id="address" 
+      [(ngModel)]=" address" name="address" >
+    </mat-form-field>
+    <br>
+    <mat-form-field >
+      <input matInput placeholder="ZipCode" id="zipcode" 
+      [(ngModel)]=" zipcode" name="zipcode" >
+    </mat-form-field>
+    
+    <mat-form-field >
+      <input matInput placeholder="Password" id="password" 
+      [(ngModel)]=" password" name="password" >
+    </mat-form-field>
+    <p>
+      <button type="submit" mat-raised-button color="primary">Register</button>
+    </p>
+  </form>
+  </div>
+  
