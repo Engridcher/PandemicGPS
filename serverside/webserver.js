@@ -8,6 +8,7 @@ const ZipCode = require('./zipcode')
 const SuggestSite = require('./suggestsite')
 const ZipCodeLatLog = require('./zipcodelatlog')
 const Donation = require('./donationusers')
+const User = require('./user')
 
 const app = express();
 
@@ -321,8 +322,8 @@ app.get('/users', (req, res, next) => {
 // serve incoming post requests to /user
 app.post('/users', (req, res, next) => {
   // create a new user variable and save request’s fields
+  console.log(req.body);
   const user = new User({
-
     firstname: req.body.firstname,
     lastname: req.body.lastname,
     username: req.body.username,
@@ -335,7 +336,9 @@ app.post('/users', (req, res, next) => {
   //send the document to the database
   user.save()
     //in case of success
-    .then(() => { console.log('Success'); })
+    .then(() => { console.log('Success');
+      res.json({ mydata: "User has been saved!!" })
+  })
     //if error
     .catch(err => { console.log('Error:' + err); });
 

@@ -59,3 +59,7 @@ mat-sidenav {
 mat-sidenav-container button {
   margin: 5px;
 }
+
+.button-overflow-hidden {
+  padding: 0px;
+}

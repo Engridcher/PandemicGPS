@@ -6,6 +6,7 @@ import { DonationPageUpdateComponent } from './donation-page-update/donation-pag
 import { DonationPageComponent } from './donation-page/donation-page.component';
 import { GetSuggestSiteComponent } from './get-suggest-site/get-suggest-site.component';
 import { HomeComponent } from './home/home.component';
+import { ListUsersComponent } from './list-users/list-users.component';
 import { LoginComponent } from './login/login.component';
 import { NewUserFormComponent } from './new-user-form/new-user-form.component';
 import { SiteLocatorDeleteComponent } from './site-locator-delete/site-locator-delete.component';
@@ -17,6 +18,7 @@ import { UpdateSuggestSiteComponent } from './update-suggest-site/update-suggest
 const routes: Routes = [
   { path: 'addUsers', component: NewUserFormComponent },
   { path: 'login', component: LoginComponent},
+  { path: 'listUsers', component: ListUsersComponent},
   { path: 'searchzipcode', component: SiteLocatorComponent},
   // { path: 'getzipcode', component: SiteLocatorGetComponent},
   { path: 'deletezipcode', component: SiteLocatorDeleteComponent},

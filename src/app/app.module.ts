@@ -10,6 +10,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatInputModule } from '@angular/material/input';
 
 import {WarningMessageComponent} from './warning-message/warning-message.component';
 import { SuccessMessageComponent } from './success-message/success-message.component';
@@ -32,6 +34,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { ListUsersComponent } from './list-users/list-users.component';
+import { UserService } from './user.service';
 
 @NgModule({
   declarations: [
@@ -65,11 +68,13 @@ import { ListUsersComponent } from './list-users/list-users.component';
     MatListModule,
     MatButtonModule,
     MatButtonToggleModule,
+    MatMenuModule,
+    MatInputModule,
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

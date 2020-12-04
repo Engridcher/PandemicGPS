@@ -9,4 +9,9 @@ export class AppComponent {
   title = 'Pandemic GPS';
   list = ['Home', 'About', 'Room', 'People'];
   opened = false;
+  // invertebrates;
+  // fish;
+  // amphibians;
+  // reptiles;
+  animals;
 }

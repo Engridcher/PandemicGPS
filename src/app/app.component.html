@@ -10,10 +10,13 @@
       <a mat-list-item routerLink="donationpage" routerLinkActive="active">Donation</a>
       <a mat-list-item routerLink="getdonationpage" routerLinkActive="active">Get Donations</a>
       <a mat-list-item routerLink="deletedonationpage" routerLinkActive="active">Delete Donation</a>
-      <!-- <mat-list-item *ngFor="let item of list "> -->
-        <!-- <mat-icon matListIcon>Some Item</mat-icon> -->
-        <!-- <h3 matLine>Some Item</h3> -->
-      <!-- </mat-list-item> -->
+
+      <button mat-button [matMenuTriggerFor]="animals" class="button-overflow-hidden">Pandemic GPS Members</button>
+      <mat-menu #animals="matMenu" >
+        <a mat-menu-item routerLink="login"  routerLinkActive="active">Login</a>
+        <a mat-menu-item routerLink="addUsers"  routerLinkActive="active">Sign Up</a>
+        <a mat-menu-item routerLink="listUsers"  routerLinkActive="active">Member Info</a>
+      </mat-menu>
     </mat-nav-list>
   </mat-sidenav>
   <!-- <button (click)="opened=!opened">Open</button> -->

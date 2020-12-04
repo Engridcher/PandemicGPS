@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {UserService} from '../user.service';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-list-users',
@@ -8,21 +8,20 @@ import {UserService} from '../user.service';
 })
 export class ListUsersComponent implements OnInit {
 
-  
+
   //declare variable to hold response and make it public to be accessible from components.html
   public users;
-  //initialize the call using UserService 
-  constructor(private _myService: UserService)
-  {}
-  
+  //initialize the call using UserService
+  constructor(private _myService: UserService) { }
+
   ngOnInit() {
     this.getUsers();
   }
   //method called OnInit
   getUsers() {
-   this._myService.getUsers().subscribe(
+    this._myService.getUsers().subscribe(
       //read data and assign to public variable users
-      data => { this.users = data},
+      data => { this.users = data },
       err => console.error(err),
       () => console.log('finished loading')
     );
